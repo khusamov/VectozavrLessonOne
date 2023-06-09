@@ -1,4 +1,4 @@
-﻿namespace VectozavrLessonOne.Algebra
+﻿namespace VectozavrLessonOne.Algebra.Matrix
 {
 	public partial class Matrix
 	{

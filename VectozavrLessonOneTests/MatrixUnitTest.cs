@@ -1,5 +1,3 @@
-using VectozavrLessonOne.Algebra;
-
 namespace VectozavrLessonOneTests
 {
 	[TestClass]
@@ -65,7 +63,8 @@ namespace VectozavrLessonOneTests
 					Matrix left = new(new float[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } });
 					Matrix right = new(new float[,] { { 1, 2 }, { 3, 4 } });
 					return left + right;
-				}
+				},
+				"Количество строк складываемых матриц должно совпадать."
 			);
 			Assert.ThrowsException<ArgumentException>(
 				() =>
@@ -73,7 +72,8 @@ namespace VectozavrLessonOneTests
 					Matrix left = new(new float[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } });
 					Matrix right = new(new float[,] { { 1, 2, 3 }, { 3, 4, 5 }, { 5, 6, 7 } });
 					return left + right;
-				}
+				},
+				"Количество столбцов складываемых матриц должно совпадать."
 			);
 		}
 	}
