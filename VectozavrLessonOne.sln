@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectozavrLessonOne", "VectozavrLessonOne\VectozavrLessonOne.csproj", "{801440D1-8BC8-4842-B9D6-07B179FAC1A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VectozavrLessonOneTests", "VectozavrLessonOneTests\VectozavrLessonOneTests.csproj", "{05C4F5D5-75DE-4A07-8BFE-F62677B27467}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{801440D1-8BC8-4842-B9D6-07B179FAC1A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{801440D1-8BC8-4842-B9D6-07B179FAC1A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{801440D1-8BC8-4842-B9D6-07B179FAC1A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{801440D1-8BC8-4842-B9D6-07B179FAC1A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05C4F5D5-75DE-4A07-8BFE-F62677B27467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C4F5D5-75DE-4A07-8BFE-F62677B27467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C4F5D5-75DE-4A07-8BFE-F62677B27467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C4F5D5-75DE-4A07-8BFE-F62677B27467}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9699982C-B7E3-4168-AD3F-BD0682B95A59}
+	EndGlobalSection
+EndGlobal
