@@ -3,7 +3,7 @@ using VectozavrLessonOne.Algebra;
 namespace VectozavrLessonOneTests
 {
 	[TestClass]
-	public class MatrixUnitTest
+	public partial class MatrixUnitTest
 	{
 		private static float floatDelta = 0.000001f;
 
@@ -54,6 +54,27 @@ namespace VectozavrLessonOneTests
 					Assert.AreEqual(expected[i, j], result[i, j], floatDelta, $"Не сложился элемент: [{i}, {j}]");
 				}
 			}
+		}
+
+		[TestMethod]
+		public void AdditionArgumentExceptionTest()
+		{
+			Assert.ThrowsException<ArgumentException>(
+				() =>
+				{
+					Matrix left = new(new float[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } });
+					Matrix right = new(new float[,] { { 1, 2 }, { 3, 4 } });
+					return left + right;
+				}
+			);
+			Assert.ThrowsException<ArgumentException>(
+				() =>
+				{
+					Matrix left = new(new float[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } });
+					Matrix right = new(new float[,] { { 1, 2, 3 }, { 3, 4, 5 }, { 5, 6, 7 } });
+					return left + right;
+				}
+			);
 		}
 	}
 }
