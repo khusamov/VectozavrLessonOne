@@ -15,7 +15,7 @@
 				throw new ArgumentException("Векторы должны иметь один размер");
 			}
 
-			return FromMatrix(left + right);
+			return FromMatrix(left.ToMatrix() + right.ToMatrix());
 		}
 	}
 }

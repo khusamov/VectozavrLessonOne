@@ -19,11 +19,11 @@ namespace VectozavrLessonOne.Algebra.Vector
 
 			float[,] matrixValues = new float[matrix.Rows, matrix.Cols];
 
-			for (int i = 0; i < matrix.Rows; i++)
+			for (int row = 0; row < matrix.Rows; row++)
 			{
-				for (int j = 0; j < matrix.Cols; j++)
+				for (int col = 0; col < matrix.Cols; col++)
 				{
-					matrixValues[i, j] = matrix[i, j];
+					matrixValues[row, col] = matrix[row, col];
 				}
 			}
 
