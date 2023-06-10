@@ -10,11 +10,11 @@
 			AlgebraMatrix.Matrix expected = new(new float[,] { { 2, 4 }, { 6, 8 }, { 10, 12 } });
 			AlgebraMatrix.Matrix result = left + right;
 
-			for (int i = 0; i < result.Rows; i++)
+			for (int row = 0; row < result.Rows; row++)
 			{
-				for (int j = 0; j < result.Cols; j++)
+				for (int col = 0; col < result.Cols; col++)
 				{
-					Assert.AreEqual(expected[i, j], result[i, j], floatDelta, $"Не сложился элемент: [{i}, {j}].");
+					Assert.AreEqual(expected[row, col], result[row, col], floatDelta, $"Не сложился элемент: [{row}, {col}].");
 				}
 			}
 		}
