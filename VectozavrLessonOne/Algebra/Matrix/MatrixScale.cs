@@ -5,7 +5,7 @@
 		/// <summary>
 		/// Матрица масштабирования.
 		/// </summary>
-		/// <param name="factor">Вектор со значениями масштабирования.</param>
+		/// <param name="factor">Вектор-столбец со значениями масштабирования.</param>
 		/// <returns></returns>
 		/// <exception cref="ArgumentException"></exception>
 		public static Matrix Scale(Matrix factor)
