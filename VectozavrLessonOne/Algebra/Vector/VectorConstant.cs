@@ -1,3 +1,5 @@
+using VectozavrLessonOne.Algebra.Matrix;
+
 namespace VectozavrLessonOne.Algebra.Vector
 {
 	public partial class Vector
@@ -10,7 +12,7 @@ namespace VectozavrLessonOne.Algebra.Vector
 		/// <returns>Вектор</returns>
 		public static Vector Constant(int rows, float constantValue)
 		{
-			return FromMatrix(Constant(rows, 1, constantValue));
+			return FromMatrix(Constant(new MatrixSize(rows, 1), constantValue));
 		}
 	}
 }
