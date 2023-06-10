@@ -2,6 +2,8 @@
 {
 	/// <summary>
 	/// Таймер.
+	/// На самом деле это не таймер, а скорее секундомер. 
+	/// Он просто отсчитывает сколько прошло времени с момента запуска.
 	/// </summary>
 	/// <see cref="https://github.com/vectozavr/learn_3dzavr/blob/master/engine/utils/Timer.h"/>
 	/// <see cref="https://github.com/vectozavr/learn_3dzavr/blob/master/engine/utils/Timer.cpp"/>
