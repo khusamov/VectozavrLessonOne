@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace VectozavrLessonOne.Algebra.Matrix
+﻿namespace VectozavrLessonOne.Algebra.Matrix
 {
 	public partial class Matrix
 	{
