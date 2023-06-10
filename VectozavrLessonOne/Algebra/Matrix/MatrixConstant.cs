@@ -23,5 +23,13 @@ namespace VectozavrLessonOne.Algebra.Matrix
 
 			return result;
 		}
+
+		/// <summary>
+		/// Создание квадратной матрицы с одним значением во всех ячейках.
+		/// </summary>
+		/// <param name="size">Количество строк и столбцов в новой матрице</param>
+		/// <param name="constantValue">Значение ячейки</param>
+		/// <returns></returns>
+		public static Matrix Constant(int size, float constantValue) => Constant(size, size, constantValue);
 	}
 }
