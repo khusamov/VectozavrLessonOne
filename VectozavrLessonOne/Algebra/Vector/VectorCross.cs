@@ -10,16 +10,30 @@
 		/// <exception cref="ArgumentException"></exception>
 		public Vector Cross(Vector vector)
 		{
-			if (Dimensions != 3 || vector.Dimensions != 3)
+			if (Dimensions > 3 || vector.Dimensions > 3)
 			{
-				throw new ArgumentException("Вектора должны быть трехмерными");
+				throw new ArgumentException("Размеры векторов должны быть не более трех");
 			}
+
+			Vector ToVector3(Vector vector)
+			{
+				switch (vector.Dimensions)
+				{
+					case 1: return new Vector(new float[] { vector.X, 0, 0 });
+					case 2: return new Vector(new float[] { vector.X, vector.Y, 0 });
+					case 3: return vector;
+				}
+				throw new ArgumentException("Размер вектора должен быть от 1 до 3");
+			}
+
+			Vector left = ToVector3(this);
+			Vector right = ToVector3(vector);
 
 			return new Vector(
 				new float[] {
-					Y * vector.Z - vector.Y * Z,
-					Z * vector.X - vector.Z * X,
-					X * vector.Y - vector.X * Y
+					left.Y * right.Z - right.Y * left.Z,
+					left.Z * right.X - right.Z * left.X,
+					left.X * right.Y - right.X * left.Y
 				}
 			);
 		}
