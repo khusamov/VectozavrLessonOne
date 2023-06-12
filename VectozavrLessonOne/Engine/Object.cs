@@ -1,4 +1,5 @@
-﻿using VectozavrLessonOne.Algebra.Matrix;
+﻿using System.Runtime.InteropServices;
+using VectozavrLessonOne.Algebra.Matrix;
 using VectozavrLessonOne.Algebra.Vector;
 
 namespace VectozavrLessonOne.Engine
@@ -10,6 +11,11 @@ namespace VectozavrLessonOne.Engine
 	/// <see cref="https://github.com/vectozavr/learn_3dzavr/blob/master/engine/Object.cpp"/>
 	internal class Object
 	{
+
+		// OpenGL function
+		//[[nodiscard]] GLfloat* glModel() const;
+		//[[nodiscard]] GLfloat* glInvModel() const;
+
 		private readonly ObjectNameTag _nameTag = new("");
 
 		private readonly Dictionary<ObjectNameTag, Object> _attachedObjects = new();
