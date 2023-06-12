@@ -5,7 +5,7 @@
 		/// <summary>
 		/// Компонента X вектора.
 		/// </summary>
-		public float X
+		public new float X
 		{
 			get => this[0];
 			set => this[0] = value;
@@ -14,7 +14,7 @@
 		/// <summary>
 		/// Компонента Y вектора.
 		/// </summary>
-		public float Y
+		public new float Y
 		{
 			get {
 				if (Dimensions < 2)
@@ -36,7 +36,7 @@
 		/// <summary>
 		/// Компонента Z вектора.
 		/// </summary>
-		public float Z
+		public new float Z
 		{
 			get
 			{
@@ -59,7 +59,7 @@
 		/// <summary>
 		/// Компонента W вектора.
 		/// </summary>
-		public float W
+		public new float W
 		{
 			get
 			{
