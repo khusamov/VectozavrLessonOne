@@ -10,13 +10,18 @@
 		/// <see cref="https://bit.ly/3qAWjXC"/>
 		/// <param name="size">Размер матрицы.</param>
 		/// <returns></returns>
-		public static Matrix Identity(int size)
+		public static Matrix Identity(MatrixSize size)
 		{
-			Matrix result = new(new float[size, size]);
-
-			for (int i = 0; i < size; i++)
+			if (size.Rows != size.Cols)
 			{
-				result[i, i] = 1;
+				throw new ArgumentException("Матрица должна быть квадратной");
+			}
+
+			Matrix result = new(new float[size.Rows, size.Cols]);
+
+			for (int row = 0; row < size.Rows; row++)
+			{
+				result[row, row] = 1;
 			}
 
 			return result;
