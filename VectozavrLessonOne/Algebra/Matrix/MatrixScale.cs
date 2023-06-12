@@ -15,7 +15,7 @@
 				throw new ArgumentException("Количество столбцов factor должно быть 1");
 			}
 
-			Matrix result = Zero(factor.Rows + 1);
+			Matrix result = Zero(new MatrixSize(factor.Rows + 1));
 
 			for (int row = 0; row < factor.Rows; row++)
 			{

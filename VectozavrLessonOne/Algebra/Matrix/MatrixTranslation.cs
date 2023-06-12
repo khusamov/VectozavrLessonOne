@@ -15,7 +15,7 @@
 				throw new ArgumentException("Количество столбцов direction должно быть 1");
 			}
 
-			Matrix result = Zero(direction.Rows + 1);
+			Matrix result = Zero(new MatrixSize(direction.Rows + 1));
 
 			for (int row = 0; row < direction.Rows + 1; row++)
 			{
