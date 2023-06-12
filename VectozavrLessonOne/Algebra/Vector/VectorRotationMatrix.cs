@@ -8,7 +8,7 @@ namespace VectozavrLessonOne.Algebra.Vector
 		/// Создать матрицу вращения по трем осям.
 		/// </summary>
 		/// <returns>Матрица</returns>
-		public AlgebraMatrix.Matrix Rotation()
+		public AlgebraMatrix.Matrix RotationMatrix()
 		{
 			return RotationX(X) * RotationY(Y) * RotationZ(Z);
 		}
@@ -18,7 +18,7 @@ namespace VectozavrLessonOne.Algebra.Vector
 		/// </summary>
 		/// <param name="angle">Угол, на который следует выполнить вращение</param>
 		/// <returns>Матрица</returns>
-		public AlgebraMatrix.Matrix Rotation(float angle)
+		public AlgebraMatrix.Matrix RotationMatrix(float angle)
 		{
 			Vector normal = Normalize();
 			float cos = MathF.Cos(angle), sin = MathF.Sin(angle);
