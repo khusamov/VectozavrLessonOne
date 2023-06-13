@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using VectozavrLessonOne.Algebra.Matrix;
+﻿using VectozavrLessonOne.Algebra.Matrix;
 using VectozavrLessonOne.Algebra.Vector;
 
 namespace VectozavrLessonOne.Engine
