@@ -167,7 +167,10 @@ namespace VectozavrLessonOne.Engine
 
 		/// <summary>
 		/// Координаты центра треугольника.
+		/// В качестве позиции можно, в принципе, взять любую точку треугольника. 
+		/// В данном случае мы берем центроид треугольника (см. ссылку) – барицентр или центр тяжести треугольника.
 		/// </summary>
+		/// <see cref="https://bit.ly/42xd6Id"/>
 		/// <see cref="https://vectozavr.ru/forum?post=57"/>
 		/// <returns></returns>
 		public Vector Position()
