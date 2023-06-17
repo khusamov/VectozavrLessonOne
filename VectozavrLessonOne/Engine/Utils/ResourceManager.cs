@@ -1,15 +1,18 @@
 ﻿using SFML.Audio;
 using SFML.Graphics;
 using System.Diagnostics;
+using Object3DParser = VectozavrLessonOne.DataFormat.Object3D.Parser;
+using Object3DDataTypeParser = VectozavrLessonOne.DataFormat.Object3D.DataTypeParser;
+using Object3DDataTypeParserCollection = VectozavrLessonOne.DataFormat.Object3D.DataTypeParserCollection;
 
 namespace VectozavrLessonOne.Engine.Utils
 {
-	/// <summary>
-	/// Менеджер ресурсов: текстуры, шрифты, звуки и трехмерные объекты.
-	/// </summary>
-	/// <see cref="https://github.com/vectozavr/learn_3dzavr/blob/master/engine/utils/ResourceManager.h"/>
-	/// <see cref="https://github.com/vectozavr/learn_3dzavr/blob/master/engine/utils/ResourceManager.cpp"/>
-	internal class ResourceManager
+    /// <summary>
+    /// Менеджер ресурсов: текстуры, шрифты, звуки и трехмерные объекты.
+    /// </summary>
+    /// <see cref="https://github.com/vectozavr/learn_3dzavr/blob/master/engine/utils/ResourceManager.h"/>
+    /// <see cref="https://github.com/vectozavr/learn_3dzavr/blob/master/engine/utils/ResourceManager.cpp"/>
+    internal class ResourceManager
 	{
 		private readonly Dictionary<string, Texture> _textures = new();
 		private readonly Dictionary<string, Font> _fonts = new();
@@ -91,9 +94,13 @@ namespace VectozavrLessonOne.Engine.Utils
 			}
 
 			string[] object3dLines = File.ReadAllLines(filename);
-			DataFormat.Object3D.Parser object3dParser = new(new DataFormat.Object3D.DataTypeParserCollection(new DataFormat.Object3D.DataTypes.DataTypeParser[] {
-				// TODO Добавить парсеры типов данных OBJ-файла.
-			}));
+			Object3DParser object3dParser = new(
+				new Object3DDataTypeParserCollection(
+					new Object3DDataTypeParser[] {
+						// TODO Добавить парсеры типов данных OBJ-файла.
+					}
+				)
+			);
 			var triangleGroupsDictionary = object3dParser.Parse(object3dLines);
 			Mesh[] objects = new Mesh[triangleGroupsDictionary.Count];
 
