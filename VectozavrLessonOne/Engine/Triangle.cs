@@ -1,6 +1,7 @@
 ﻿using SFML.Graphics;
 using VectozavrLessonOne.Algebra.Matrix;
 using VectozavrLessonOne.Algebra.Vector;
+using VectozavrLessonOne.Algebra.Plane;
 
 namespace VectozavrLessonOne.Engine
 {
@@ -192,6 +193,96 @@ namespace VectozavrLessonOne.Engine
 			}
 
 			return Normal.Dot(this[0] - point);
+		}
+
+		/// <summary>
+		/// Отсечение треугольника плоскостью. 
+		/// Возвращает ту часть треугольника, которая находится с той стороны плоскости, куда смотрит нормаль плоскость.
+		/// Эту часть возвращает триангулированной. То есть возвращает массив треугольников.
+		/// 
+		/// Возвращает ноль треугольников, если треугольник находится в с той стороны плоскости, куда не смотрит нормаль.
+		/// Возвращает один треугольник, если треугольник находится с той стороны плоскости, куда смотрит нормаль плоскость.
+		/// Возвращает два либо один треугольник, если треугольник пересекает плоскость.
+		/// </summary>
+		/// <see cref="https://vectozavr.ru/lesson.php?id_article=31"/>
+		/// <see cref="https://github.com/vectozavr/3dzavr/blob/master/engine/math/Plane.cpp"/>
+		public Triangle[] Clip(Plane plane)
+		{
+			float[] distances = new float[]
+			{
+				plane.Distance(this[0]),
+				plane.Distance(this[1]),
+				plane.Distance(this[2])
+			};
+
+			List<Vector> frontSideOfPlanePoints = new(); // insidePoints Внутри поля зрения (пирамиды) камеры. 
+			List<Vector> backSideOfPlanePoints = new();  // outsidePoints
+
+			for (int i = 0; i < distances.Length; i++)
+			{
+				if (distances[i] >= 0)
+				{
+					frontSideOfPlanePoints.Add(this[i]);
+				}
+				else
+				{
+					backSideOfPlanePoints.Add(this[i]);
+				}
+			}
+
+			Triangle[] result = Array.Empty<Triangle>();
+
+			switch (frontSideOfPlanePoints.Count)
+			{
+				// Первый случай это когда одна точка спереди плоскости (внутри поля зрения камеры).
+				case 1:
+					{
+						var intersection1 = plane.Intersection(frontSideOfPlanePoints[0], backSideOfPlanePoints[0]);
+						var intersection2 = plane.Intersection(frontSideOfPlanePoints[0], backSideOfPlanePoints[1]);
+						result = new Triangle[]
+						{
+							new Triangle(
+								frontSideOfPlanePoints[0],
+								intersection1.Key,
+								intersection2.Key,
+								Color
+							)
+						};
+					}
+					break;
+				// Второй случай это когда две точки спереди плоскости (внутри поля зрения камеры).
+				case 2:
+					{
+						var intersection1 = plane.Intersection(frontSideOfPlanePoints[0], backSideOfPlanePoints[0]);
+						var intersection2 = plane.Intersection(frontSideOfPlanePoints[1], backSideOfPlanePoints[0]);
+						result = new Triangle[]
+						{
+							new Triangle(
+								frontSideOfPlanePoints[0],
+								intersection1.Key,
+								frontSideOfPlanePoints[1],
+								Color
+							),
+							new Triangle(
+								intersection1.Key,
+								intersection2.Key,
+								frontSideOfPlanePoints[1],
+								Color
+							),
+
+						};
+					}
+					break;
+				// Третий случай это когда все точки спереди плоскости (внутри поля зрения камеры).
+				case 3:
+					result = new Triangle[] 
+					{ 
+						this
+					};
+					break;
+			}
+
+			return result;
 		}
 	}
 }
