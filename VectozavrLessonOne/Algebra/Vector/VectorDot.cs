@@ -4,6 +4,7 @@
 	{
 		/// <summary>
 		/// Скалярное произведение векторов.
+		/// Это по сути определение длины проекции вектора this на vector.
 		/// </summary>
 		/// <param name="vector"></param>
 		/// <returns></returns>
