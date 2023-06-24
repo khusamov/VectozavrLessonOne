@@ -3,6 +3,11 @@ using VectozavrLessonOne.Algebra.Vector;
 
 namespace VectozavrLessonOne.Engine.IO
 {
+	/// <summary>
+	/// Mouse
+	/// </summary>
+	/// <see cref="https://github.com/vectozavr/3dzavr/blob/master/engine/io/Mouse.cpp"/>
+	/// <see cref="https://github.com/vectozavr/3dzavr/blob/master/engine/io/Mouse.h"/>
 	internal class Mouse
 	{
 		private Screen _screen;
