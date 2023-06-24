@@ -1,8 +1,13 @@
-﻿using SFML.Graphics;
+﻿using SFML.Audio;
+using SFML.Graphics;
 using SFML.Window;
 
 namespace VectozavrLessonOne
 {
+	/// <summary>
+	/// SfmlExample
+	/// </summary>
+	/// <see cref="https://github.com/SFML/SFML.Net/blob/master/examples/window/Program.cs"/>
 	internal class SfmlExample
 	{
 		public static void DisplayExampleWindow()
